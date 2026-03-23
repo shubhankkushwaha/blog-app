@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  root "home#index" 
+
+  root 'home#new'
+
+  resources :home, only: [:new, :create]
 end
+
+
