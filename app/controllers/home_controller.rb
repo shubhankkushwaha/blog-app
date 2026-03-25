@@ -7,7 +7,7 @@ class HomeController < ApplicationController
   end
 
   def create
-    @name  = params[:name]
+    @user = User.create(name: params[:name])
   end
 
 
