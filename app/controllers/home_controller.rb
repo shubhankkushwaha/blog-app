@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @message = "MVC is Powerful 🤓"
+    @users =  User.order(created_at: :desc)
   end
 
   def new
