@@ -1,0 +1,12 @@
+<% @user.errors.full_messages.each do |msg| %>
+    <p> <%= msg %>
+    </p>
+<% end %>
+
+<%= form_with model: @user, url: "/users/#{@user.id}", method: :patch  do |f| %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+<% end %>
+
+
+

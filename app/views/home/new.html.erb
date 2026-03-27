@@ -1,6 +1,7 @@
  <h1>Enter your name</h1>
-<%= form_with url:"/home" , method: :post do  %>
-    <%= text_field_tag :name %>
-    <%= submit_tag "Submit" %>
+
+<%= form_with model: @user, url: "/users" do |f|  %>
+    <%= f.text_field :name %>
+    <%= f.submit "Submit" %>
 <% end %>
 
