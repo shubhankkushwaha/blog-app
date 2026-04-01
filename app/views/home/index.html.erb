@@ -5,6 +5,7 @@
         <p>
           <%= user.name %>
           <%= link_to "EDIT", edit_user_path(user) %>
+          <%= button_to "DELETE", user_path(user), method: :delete, data: { confirm: "Are you sure?" } %>
         </p>
     <%end %>
 <% else %>
