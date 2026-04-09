@@ -1,6 +1,12 @@
  <h1>Enter your name</h1>
 
-<%= form_with model: @user, url: "/users" do |f|  %>
+<%= form_with model: @user do |f|  %>
+    <% if @user.errors.any? %>
+      <% @user.errors.full_messages.each do |msg| %>
+        <p style="color:red;"><%= msg %></p>
+      <% end %>
+    <% end %>
+
     <%= f.text_field :name %>
     <%= f.submit "Submit" %>
 <% end %>

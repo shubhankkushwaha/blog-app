@@ -11,7 +11,7 @@ class HomeController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to "/users", notice: "User Created"
+      redirect_to users_path, notice: "User Created"
     else
       render :new
     end
@@ -25,7 +25,7 @@ class HomeController < ApplicationController
     @user  = User.find(params[:id])
 
     if @user.update(user_params)
-      redirect_to "/users", notice: "User Updated"
+      redirect_to users_path, notice: "User Updated"
     else
       render :edit
     end
