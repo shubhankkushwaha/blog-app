@@ -22,8 +22,24 @@
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
   </head>
 
-  <body>
-  
+  <script>
+    setTimeout(() => {
+      document.querySelectorAll("div").forEach(el => {
+        if(el.innerText.includes("success")) {
+          el.style.display = "none";
+        }
+      });
+      
+    }, 2000);
+  </script>
+
+  <body style = "font-family: Arial; background ; color:black; margin: 0; padding: 20px">
+
+    <% flash.each do |type, message| %>
+      <div class = "flash-message" style = "padding: 12px; margin-bottom: 15px; border-radius: 8px; background: <%= type == 'notice' ? '#22c55e' : '#ef4444' %> color:white; font-weight: bold;">
+        <%= message %>
+      </div>
+    <% end %>
     <% if notice %>
       <p style="color: green; font-weight: bold;"><%= notice %></p>
     <% end %>
