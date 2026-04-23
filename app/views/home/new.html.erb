@@ -1,32 +1,25 @@
-<div style="max-width:400px; margin:auto; background:#1e293b; padding:20px; border-radius:10px;">
+<div style="background:#1e293b; padding:25px; border-radius:12px;">
 
-<h2 style="text-align:center;">Create User</h2>
+<h2 style="color:#facc15;">Create User</h2>
 
 <% if @user.errors.any? %>
-  <div style="background:#ef4444; padding:10px; margin-bottom:10px;">
-    <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
+  <div style="background:#ef4444; padding:10px;">
+    <% @user.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
   </div>
 <% end %>
 
 <%= form_with model:@user do |f| %>
 
-  <div>
-    <%= f.label :name %><br>
-    <%= f.text_field :name, style:"width:100%; padding:8px; margin-bottom:10px;" %>
-  </div>
+  <%= f.label :name %>
+  <%= f.text_field :name, style:"width:100%; padding:10px; margin-bottom:10px;" %>
 
-  <div>
-    <%= f.label :email %><br>
-    <%= f.text_field :email, style:"width:100%; padding:8px; margin-bottom:10px;" %>
-  </div>
+  <%= f.label :email %>
+  <%= f.text_field :email, style:"width:100%; padding:10px; margin-bottom:10px;" %>
 
-  <%= f.submit "Create User", style:"width:100%; background:#e11d48; color:white; padding:10px; border:none;" %>
+  <%= f.submit "Create", style:"background:#e11d48; padding:10px; color:white; width:100%;" %>
 
 <% end %>
 
-</div>  
-
+</div>

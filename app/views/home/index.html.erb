@@ -1,9 +1,11 @@
-<h1> All Users 😎 </h1>
+<h2 style="color:#facc15;">User Details</h2>
 
 <% if @users.any? %>
     <% @users.each do |user| %>
         <p>
-          <%= user.name %>
+            <p><strong>Name:</strong> <%= user.name %></p>
+        <br>
+
           <%= link_to "EDIT", edit_user_path(user) %>
           <%= button_to "DELETE", user_path(user), method: :delete, data: { confirm: "Are you sure?" } %>
         </p>

@@ -8,3 +8,146 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+:root {
+  --bg: #0b1220;
+  --surface: rgba(255, 255, 255, 0.06);
+  --surface-strong: rgba(255, 255, 255, 0.1);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.72);
+  --border: rgba(255, 255, 255, 0.14);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+
+  --success: #22c55e;
+  --danger: #ef4444;
+  --info: #38bdf8;
+  --warning: #f59e0b;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body.app {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
+  color: var(--text);
+  background:
+    radial-gradient(1200px 700px at 20% -10%, rgba(56, 189, 248, 0.20), transparent 65%),
+    radial-gradient(900px 600px at 80% 0%, rgba(34, 197, 94, 0.16), transparent 60%),
+    radial-gradient(900px 600px at 50% 110%, rgba(245, 158, 11, 0.12), transparent 60%),
+    var(--bg);
+}
+
+.container {
+  width: min(960px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+  background: rgba(11, 18, 32, 0.7);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.brand__title {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: 18px;
+}
+
+.brand__tagline {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.main {
+  padding: 26px 0 48px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.card--padded {
+  padding: 18px;
+}
+
+a { color: inherit; }
+a:hover { color: rgba(255, 255, 255, 0.98); }
+
+.flash-stack {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.flash {
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  padding: 12px 12px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.flash__message {
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.flash__close {
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+.flash__close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.flash--success { border-color: rgba(34, 197, 94, 0.35); }
+.flash--danger { border-color: rgba(239, 68, 68, 0.35); }
+.flash--info { border-color: rgba(56, 189, 248, 0.35); }
+.flash--warning { border-color: rgba(245, 158, 11, 0.35); }
+
+.flash--success .flash__message { color: rgba(34, 197, 94, 0.95); }
+.flash--danger .flash__message { color: rgba(239, 68, 68, 0.95); }
+.flash--info .flash__message { color: rgba(56, 189, 248, 0.95); }
+.flash--warning .flash__message { color: rgba(245, 158, 11, 0.95); }
+
+/* Basic typography defaults for typical scaffolded views */
+h1, h2, h3 { letter-spacing: -0.02em; }
+p { color: var(--muted); }
+input, textarea, select, button { font: inherit; }

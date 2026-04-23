@@ -33,21 +33,24 @@
     }, 2000);
   </script>
 
-  <body style = "font-family: Arial; background ; color:black; margin: 0; padding: 20px">
+<body style="background:#0f172a; color:white; font-family:Arial; margin:0;">
 
-    <% flash.each do |type, message| %>
-      <div class = "flash-message" style = "padding: 12px; margin-bottom: 15px; border-radius: 8px; background: <%= type == 'notice' ? '#22c55e' : '#ef4444' %> color:white; font-weight: bold;">
-        <%= message %>
+  <div style="max-width:900px; margin:auto; padding:20px;">
+
+    <h1 style="color:#facc15; text-align:center;">User Management</h1>
+
+    <% flash.each do |type, msg| %>
+      <div style="
+        padding:12px;
+        margin-bottom:15px;
+        border-radius:8px;
+        background:<%= type == 'notice' ? '#22c55e' : '#ef4444' %>;
+      ">
+        <%= msg %>
       </div>
-    <% end %>
-    <% if notice %>
-      <p style="color: green; font-weight: bold;"><%= notice %></p>
-    <% end %>
-
-    <% if alert %>
-      <p style="color: red; font-weight: bold;"><%= alert %></p>
     <% end %>
 
     <%= yield %>
-  </body>
+  </div>
+</body>
 </html>
