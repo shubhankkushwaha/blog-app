@@ -3,7 +3,8 @@
 <% if @users.any? %>
     <% @users.each do |user| %>
         <p>
-            <p><strong>Name:</strong> <%= user.name %></p>
+            <p><strong>Name:</strong> <%= link_to user.name, user_path(user) %></p>
+
         <br>
 
           <%= link_to "EDIT", edit_user_path(user) %>

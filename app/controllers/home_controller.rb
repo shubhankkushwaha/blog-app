@@ -7,6 +7,16 @@ class HomeController < ApplicationController
     @user = User.new
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
+  # /users/5
+
+  # params[:id] = 5
+
+  
+
   def create
     @user = User.new(user_params)
 
